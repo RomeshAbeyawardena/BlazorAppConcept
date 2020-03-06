@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29503.13
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorAppConcept.Contracts", "BlazorAppConcept.Contracts\BlazorAppConcept.Contracts.csproj", "{644B7A94-48AD-43C8-8469-2CB6A0867C4F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorAppConcept.App", "BlazorAppConcept.App\BlazorAppConcept.App.csproj", "{BF50345A-A30F-4032-AF80-D061067F9613}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorAppConcept.BlazorApp", "BlazorAppConcept.App\BlazorAppConcept.BlazorApp.csproj", "{BF50345A-A30F-4032-AF80-D061067F9613}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorAppConcept.ServiceBroker", "BlazorAppConcept.ServiceBroker\BlazorAppConcept.ServiceBroker.csproj", "{85443D1B-53B1-46CF-B7E4-7E95AD283170}"
 EndProject

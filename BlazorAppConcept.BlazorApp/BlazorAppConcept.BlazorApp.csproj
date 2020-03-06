@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
+    <PackageReference Include="Blazor-State" Version="3.2.0" />
+    <PackageReference Include="DNI.Shared.Services" Version="1.0.1.61" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BlazorAppConcept.Domains\BlazorAppConcept.Domains.csproj" />
+    <ProjectReference Include="..\BlazorAppConcept.ServiceBroker\BlazorAppConcept.ServiceBroker.csproj" />
+  </ItemGroup>
+
+</Project>
