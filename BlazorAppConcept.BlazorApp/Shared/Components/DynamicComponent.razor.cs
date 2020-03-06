@@ -29,10 +29,11 @@ namespace BlazorAppConcept.BlazorApp.Shared.Components
 
                 var componentType = Type.GetType(string.Format("{0}.{1}",
                     Namespace, Name));
+
                 if(componentType == null)
                     return;
-                var sequence = 1;
-                builder.OpenComponent(0, componentType);
+                var sequence = 0;
+                builder.OpenComponent(sequence++, componentType);
 
                 if(Parameters != null)
                     foreach(var keyValue in Parameters)
