@@ -19,6 +19,11 @@ namespace BlazorAppConcept.Services
             return await _customerRepository.Find(false, cancellationToken, id);
         }
 
+        public async Task<Customer> SaveCustomer(Customer encryptedCustomer, CancellationToken cancellationToken)
+        {
+            return await _customerRepository.SaveChanges(encryptedCustomer, true, true, cancellationToken);
+        }
+
         public CustomerService(IRepository<Customer> customerRepository)
         {
             _customerRepository = customerRepository;

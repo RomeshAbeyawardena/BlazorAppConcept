@@ -2,7 +2,7 @@
 
 namespace BlazorAppConcept.Domains
 {
-    public class Class1
+    public class DomainProfile
     {
     }
 }

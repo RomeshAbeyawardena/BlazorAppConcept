@@ -28,6 +28,11 @@ namespace BlazorAppConcept.BlazorApp.Shared.Components
             await Mediator.Send(new CustomerState.UpdateCustomerFieldAction { PropertyName = propertyName, Value = value });
         }
 
+        protected async Task SaveCustomer()
+        {
+            await Mediator.Send(new CustomerState.SaveCustomerAction() );
+        }
+
         protected override async Task OnParametersSetAsync()
         {
             await Mediator.Send(new CustomerState.RetrieveCustomerAction { 

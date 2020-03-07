@@ -28,7 +28,7 @@ namespace BlazorAppConcept.BlazorApp
                 options.RegisterAutoMappingProviders = true;
                 options.RegisterCryptographicProviders = true;
             }, out var serviceBrokerInstance);
-            services.AddAutoMapper(Assembly.GetAssembly(typeof(Domains.Class1)));
+            services.AddAutoMapper(Assembly.GetAssembly(typeof(Domains.DomainProfile)));
             services
                 .AddBlazorState(cfg => cfg.Assemblies = serviceBrokerInstance.Assemblies);
         }

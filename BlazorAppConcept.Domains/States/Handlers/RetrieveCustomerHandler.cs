@@ -32,6 +32,7 @@ namespace BlazorAppConcept.Domains.States
                 var response = await _mediator.Send(new GetCustomerRequest { Id = aAction.CustomerId });
 
                 if(Response.IsSuccessful(response)){
+                    CustomerState.Id = response.Customer.Id;
                     CustomerState.FirstName = response.Customer.FirstName;
                     CustomerState.MiddleName = response.Customer.MiddleName;
                     CustomerState.LastName = response.Customer.LastName;

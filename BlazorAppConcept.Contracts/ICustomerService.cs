@@ -11,5 +11,6 @@ namespace BlazorAppConcept.Contracts
     public interface ICustomerService
     {
         Task<Customer> GetCustomer(int id, CancellationToken cancellationToken);
+        Task<Customer> SaveCustomer(Customer encryptedCustomer, CancellationToken cancellationToken);
     }
 }

@@ -1,5 +1,4 @@
-﻿using BlazorAppConcept.Domains.Dtos;
-using BlazorState;
+﻿using BlazorState;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,9 +9,9 @@ namespace BlazorAppConcept.Domains.States
 {
     public partial class CustomerState
     {
-        public class RetrieveCustomerAction : IAction
+        public class SaveCustomerAction : IAction
         {
-            public int CustomerId { get; set; }
+
         }
     }
 }
