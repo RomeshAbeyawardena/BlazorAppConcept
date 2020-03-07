@@ -7,7 +7,7 @@
   <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
     <PackageReference Include="Blazor-State" Version="3.2.0" />
-    <PackageReference Include="DNI.Shared.Services" Version="1.0.1.65" />
+    <PackageReference Include="DNI.Core.Services" Version="1.0.0.3" />
   </ItemGroup>
 
   <ItemGroup>

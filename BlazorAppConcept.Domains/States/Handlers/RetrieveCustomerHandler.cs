@@ -1,7 +1,7 @@
 ﻿using BlazorAppConcept.Domains.Dtos;
 using BlazorAppConcept.Domains.Requests;
 using BlazorState;
-using DNI.Shared.Contracts;
+using DNI.Core.Contracts;
 using MediatR;
 using System;
 using System.Collections.Generic;

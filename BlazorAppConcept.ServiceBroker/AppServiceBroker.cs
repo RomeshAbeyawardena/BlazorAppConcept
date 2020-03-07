@@ -1,8 +1,9 @@
-﻿using BlazorAppConcept.Domains.States;
+﻿using BlazorAppConcept.Data;
+using BlazorAppConcept.Domains.States;
 using BlazorAppConcept.Services;
-using DNI.Shared.Contracts;
-using DNI.Shared.Contracts.Options;
-using DNI.Shared.Services.Abstraction;
+using DNI.Core.Contracts;
+using DNI.Core.Contracts.Options;
+using DNI.Core.Services.Abstraction;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -14,7 +15,10 @@ namespace BlazorAppConcept.ServiceBroker
     {
         public AppServiceBroker()
         {
-            Assemblies = new [] { DefaultAssembly, GetAssembly<ServiceRegistration>(), GetAssembly<CounterState>() };
+            Assemblies = new [] { DefaultAssembly, 
+                GetAssembly<DataServiceRegistration>(), 
+                GetAssembly<ServiceRegistration>(), 
+                GetAssembly<CounterState>() };
         }
 
     }

@@ -1,4 +1,4 @@
-﻿using DNI.Shared.Services;
+﻿using DNI.Core.Services;
 using Microsoft.AspNetCore.Components;
 using System;
 using System.Collections.Generic;

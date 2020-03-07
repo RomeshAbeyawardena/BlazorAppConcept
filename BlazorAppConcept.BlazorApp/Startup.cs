@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using BlazorAppConcept.ServiceBroker;
-using DNI.Shared.Services.Extensions;
+using DNI.Core.Services.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -26,6 +26,7 @@ namespace BlazorAppConcept.BlazorApp
             services.RegisterServiceBroker<AppServiceBroker>(options => { 
                 options.RegisterMediatorServices = true;
                 options.RegisterAutoMappingProviders = true;
+                options.RegisterCryptographicProviders = true;
             }, out var serviceBrokerInstance);
             services.AddAutoMapper(Assembly.GetAssembly(typeof(Domains.Class1)));
             services

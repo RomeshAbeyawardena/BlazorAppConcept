@@ -1,26 +1,27 @@
 ﻿using BlazorAppConcept.Contracts;
-using BlazorAppConcept.Domains.Dtos;
+using BlazorAppConcept.Domains.Data;
+using DNI.Core.Contracts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace BlazorAppConcept.Services
 {
     public class CustomerService : ICustomerService
     {
-        public Task<Customer> GetCustomer(int id)
+        private readonly IRepository<Customer> _customerRepository;
+
+        public async Task<Customer> GetCustomer(int id, CancellationToken cancellationToken)
         {
-            return Task.FromResult(new Customer
-            {
-                Id = id,
-                EmailAddress = "Jane.Doe@gmail.com",
-                FirstName = "Jane",
-                MiddleName = "Harrison",
-                LastName = "Doe",
-                DateOfBirth = new DateTime(1987, 07, 01)
-            });
+            return await _customerRepository.Find(false, cancellationToken, id);
+        }
+
+        public CustomerService(IRepository<Customer> customerRepository)
+        {
+            _customerRepository = customerRepository;
         }
     }
 }
