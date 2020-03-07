@@ -26,5 +26,15 @@ namespace BlazorAppConcept.Domains.States
             EmailAddress = default;
             DateOfBirth = default;
         }
+
+        public static void UpdateFields(CustomerState state, Customer customer)
+        {
+            state.Id = customer.Id;
+            state.FirstName = customer.FirstName;
+            state.MiddleName = customer.MiddleName;
+            state.LastName = customer.LastName;
+            state.EmailAddress = customer.EmailAddress;
+            state.DateOfBirth = customer.DateOfBirth;
+        }
     }
 }

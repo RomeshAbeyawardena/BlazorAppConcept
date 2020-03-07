@@ -3,35 +3,46 @@
 <div classs="row">
     <div class="col">First Name</div>
     <div class="col">
-        <input type="text" @onchange="((e) => UpdateCustomerField(nameof(FirstName), e.Value))" />
+        <input 
+               type="text" 
+               value="@FirstName" 
+               @onchange="((e) => UpdateCustomerField(nameof(FirstName), e.Value))" />
         @FirstName
     </div>
 </div>
 <div classs="row">
     <div class="col">Middle Name</div>
     <div class="col">
-        <input type="text" @onchange="((e) => UpdateCustomerField(nameof(MiddleName), e.Value))" />
+        <input type="text" 
+               value="@MiddleName" 
+               @onchange="((e) => UpdateCustomerField(nameof(MiddleName), e.Value))" />
         @MiddleName
     </div>
 </div>
 <div classs="row">
     <div class="col">Last Name</div>
     <div class="col">
-        <input type="text" @onchange="((e) => UpdateCustomerField(nameof(LastName), e.Value))" />
+        <input type="text" 
+               value="@LastName" 
+               @onchange="((e) => UpdateCustomerField(nameof(LastName), e.Value))" />
         @LastName
     </div>
 </div>
 <div classs="row">
     <div class="col">Email Address</div>
     <div class="col">
-        <input type="text" @onchange="((e) => UpdateCustomerField(nameof(EmailAddress), e.Value))" />
+        <input type="text" 
+               value="@EmailAddress" 
+               @onchange="((e) => UpdateCustomerField(nameof(EmailAddress), e.Value))" />
         @EmailAddress
     </div>
 </div>
 <div classs="row">
     <div class="col">Date Of Birth</div>
     <div class="col">
-        <input type="text" @onchange="((e) => UpdateCustomerField(nameof(DateOfBirth), e.Value))" />
+        <input type="text" 
+               value="@DateOfBirth" 
+               @onchange="((e) => UpdateCustomerField(nameof(DateOfBirth), e.Value))" />
         @DateOfBirth
     </div>
 </div>

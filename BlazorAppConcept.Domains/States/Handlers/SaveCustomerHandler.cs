@@ -1,6 +1,7 @@
 ﻿using BlazorAppConcept.Domains.Requests;
 using BlazorState;
 using DNI.Core.Contracts;
+using DNI.Core.Domains;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -29,7 +30,10 @@ namespace BlazorAppConcept.Domains.States
             public override async Task<Unit> Handle(SaveCustomerAction aAction, CancellationToken aCancellationToken)
             {
                 var request = _mapperProvider.Map<CustomerState, SaveCustomerRequest>(CustomerState);
-                await _mediator.Send(request);
+                var response = await _mediator.Send(request);
+
+                if(Response.IsSuccessful(response))
+                    UpdateFields(CustomerState, response.Result);
 
                 return Unit.Value;
             }

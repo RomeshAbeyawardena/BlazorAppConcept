@@ -17,7 +17,7 @@ namespace BlazorAppConcept.BlazorApp.Shared
             ComponentDictionary = DictionaryBuilder
                 .Create<string, IDictionary<string, object>>()
                 .Add("CounterComponent", DictionaryBuilder.Create<string, object>().ToDictionary())
-                .Add("CustomerComponent", DictionaryBuilder.Create<string, object>(builder => { builder.Add("CustomerId", 1); }).ToDictionary())
+                .Add("CustomerComponent", DictionaryBuilder.Create<string, object>(builder => { builder.Add("CustomerId", 2); }).ToDictionary())
                 .ToDictionary();
 
         }

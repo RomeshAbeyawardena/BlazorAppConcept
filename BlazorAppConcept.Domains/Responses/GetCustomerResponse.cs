@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 
 namespace BlazorAppConcept.Domains.Responses
 {
-    public class GetCustomerResponse : ResponseBase
+    public class GetCustomerResponse : ResponseBase<Customer>
     {
-        public Customer Customer { get; set; }
+        
     }
 }
