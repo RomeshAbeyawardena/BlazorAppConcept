@@ -6,8 +6,13 @@
 
   <ItemGroup>
     <PackageReference Include="Blazor-State" Version="3.2.0" />
-    <PackageReference Include="DNI.Shared.Services" Version="1.0.1.62" />
+    <PackageReference Include="DNI.Shared.Services" Version="1.0.1.65" />
     <PackageReference Include="Scrutor" Version="3.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BlazorAppConcept.Contracts\BlazorAppConcept.Contracts.csproj" />
+    <ProjectReference Include="..\BlazorAppConcept.Domains\BlazorAppConcept.Domains.csproj" />
   </ItemGroup>
 
 </Project>

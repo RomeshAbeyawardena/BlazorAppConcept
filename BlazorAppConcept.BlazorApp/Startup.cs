@@ -24,7 +24,7 @@ namespace BlazorAppConcept.BlazorApp
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.RegisterServiceBroker<AppServiceBroker>(options => { 
-                //options.RegisterMediatorServices = true;
+                options.RegisterMediatorServices = true;
                 options.RegisterAutoMappingProviders = true;
             }, out var serviceBrokerInstance);
             services.AddAutoMapper(Assembly.GetAssembly(typeof(Domains.Class1)));

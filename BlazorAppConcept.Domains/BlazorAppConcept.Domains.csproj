@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <PackageReference Include="Blazor-State" Version="3.2.0" />
+    <PackageReference Include="DNI.Shared.Services" Version="1.0.1.65" />
   </ItemGroup>
 
 </Project>
