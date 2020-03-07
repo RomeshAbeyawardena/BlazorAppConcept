@@ -11,13 +11,13 @@ namespace BlazorAppConcept.BlazorApp.Shared
     public class IndexRazor : ComponentBase
     {
         protected IDictionary<string, IDictionary<string, object>> ComponentDictionary { get; private set; }
-
+        protected int CustomerId { get; set; }
         public IndexRazor()
         {
             ComponentDictionary = DictionaryBuilder
                 .Create<string, IDictionary<string, object>>()
                 .Add("CounterComponent", DictionaryBuilder.Create<string, object>().ToDictionary())
-                .Add("CustomerComponent", DictionaryBuilder.Create<string, object>(builder => { builder.Add("CustomerId", 2); }).ToDictionary())
+                .Add("CustomerComponent", DictionaryBuilder.Create<string, object>(builder => { builder.Add("CustomerId", 3); }).ToDictionary())
                 .ToDictionary();
 
         }

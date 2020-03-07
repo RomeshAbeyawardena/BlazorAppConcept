@@ -1,7 +1,4 @@
 ﻿@inherits IndexRazor
 @page "/"
-
-@foreach(var component in ComponentDictionary)
-{ 
-    <DynamicComponent Name=@component.Key Parameters=@component.Value></DynamicComponent>
-}
+<input type="number" @bind-value="CustomerId" />
+<CustomerComponent CustomerId="CustomerId"></CustomerComponent>

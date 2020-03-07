@@ -33,7 +33,8 @@ namespace BlazorAppConcept.Domains.States
 
                 if(Response.IsSuccessful(response))
                     UpdateFields(CustomerState, response.Result);
-                
+                else
+                    ResetFields(CustomerState);
                 return Unit.Value;
             }
         }

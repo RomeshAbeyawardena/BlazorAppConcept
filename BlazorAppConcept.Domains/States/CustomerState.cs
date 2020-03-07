@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Humanizer;
 
 namespace BlazorAppConcept.Domains.States
 {
@@ -19,22 +20,27 @@ namespace BlazorAppConcept.Domains.States
 
         public override void Initialize()
         {
-            Id = default;
-            FirstName = default;
-            MiddleName = default;
-            LastName = default;
-            EmailAddress = default;
-            DateOfBirth = default;
+            ResetFields(this);
         }
 
         public static void UpdateFields(CustomerState state, Customer customer)
         {
             state.Id = customer.Id;
-            state.FirstName = customer.FirstName;
-            state.MiddleName = customer.MiddleName;
-            state.LastName = customer.LastName;
-            state.EmailAddress = customer.EmailAddress;
+            state.FirstName = customer.FirstName.ToLower().Titleize();
+            state.MiddleName = customer.MiddleName.ToLower().Titleize();
+            state.LastName = customer.LastName.ToLower().Titleize();
+            state.EmailAddress = customer.EmailAddress.ToLower();
             state.DateOfBirth = customer.DateOfBirth;
+        }
+
+        public static void ResetFields(CustomerState state)
+        {
+            state.Id = default;
+            state.FirstName = default;
+            state.MiddleName = default;
+            state.LastName = default;
+            state.EmailAddress = default;
+            state.DateOfBirth = default;
         }
     }
 }
