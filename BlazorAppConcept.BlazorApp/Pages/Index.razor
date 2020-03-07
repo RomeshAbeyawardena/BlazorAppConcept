@@ -1,4 +1,7 @@
 ﻿@inherits IndexRazor
 @page "/"
 
-<DynamicComponent Name="CounterComponent"></DynamicComponent>
+@foreach(var component in ComponentDictionary)
+{ 
+    <DynamicComponent Name=@component.Key Parameters=@component.Value></DynamicComponent>
+}
