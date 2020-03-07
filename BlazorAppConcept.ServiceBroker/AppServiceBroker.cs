@@ -15,10 +15,10 @@ namespace BlazorAppConcept.ServiceBroker
     {
         public AppServiceBroker()
         {
-            Assemblies = new [] { DefaultAssembly, 
-                GetAssembly<DataServiceRegistration>(), 
-                GetAssembly<ServiceRegistration>(), 
-                GetAssembly<CounterState>() };
+            DescribeAssemblies = describe => describe
+                .GetAssembly<DataServiceRegistration>()
+                .GetAssembly<ServiceRegistration>()
+                .GetAssembly<CounterState>();
         }
 
     }

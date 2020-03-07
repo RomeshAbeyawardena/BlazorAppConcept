@@ -2,6 +2,7 @@
 using BlazorAppConcept.Domains.Requests;
 using BlazorState;
 using DNI.Core.Contracts;
+using DNI.Core.Domains;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,7 @@ namespace BlazorAppConcept.Domains.States
 {
     public partial class CustomerState
     {
+        #pragma warning disable CA1034
         public class RetrieveCustomerHandler : ActionHandler<RetrieveCustomerAction>
         {
             private readonly IMediator _mediator;
@@ -29,14 +31,17 @@ namespace BlazorAppConcept.Domains.States
             {
                 var response = await _mediator.Send(new GetCustomerRequest { Id = aAction.CustomerId });
 
-                CustomerState.FirstName = response.Customer.FirstName;
-                CustomerState.MiddleName = response.Customer.MiddleName;
-                CustomerState.LastName = response.Customer.LastName;
-                CustomerState.EmailAddress = response.Customer.EmailAddress;
-                CustomerState.DateOfBirth = response.Customer.DateOfBirth;
+                if(Response.IsSuccessful(response)){
+                    CustomerState.FirstName = response.Customer.FirstName;
+                    CustomerState.MiddleName = response.Customer.MiddleName;
+                    CustomerState.LastName = response.Customer.LastName;
+                    CustomerState.EmailAddress = response.Customer.EmailAddress;
+                    CustomerState.DateOfBirth = response.Customer.DateOfBirth;
+                }
 
                 return Unit.Value;
             }
         }
+        #pragma warning restore CA1034
     }
 }

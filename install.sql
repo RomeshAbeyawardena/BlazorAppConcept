@@ -1,0 +1,18 @@
+﻿USE master
+DROP DATABASE Crm
+CREATE DATABASE Crm
+GO
+
+USE Crm
+
+CREATE TABLE [dbo].[Customer] (
+	[Id] INT NOT NULL IDENTITY(1,1)
+		CONSTRAINT PK_Customer PRIMARY KEY
+	,[EmailAddress] VARBINARY(MAX) NOT NULL
+	,[FirstName] VARBINARY(MAX) NOT NULL
+	,[MiddleName] VARBINARY(MAX) NULL
+	,[LastName]  VARBINARY(MAX) NOT NULL
+	,[DateOfBirth] DATE NOT NULL
+)
+
+SELECT  * FROM dbo.Customer

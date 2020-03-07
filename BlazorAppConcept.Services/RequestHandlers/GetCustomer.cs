@@ -3,6 +3,7 @@ using BlazorAppConcept.Domains.Data;
 using BlazorAppConcept.Domains.Requests;
 using BlazorAppConcept.Domains.Responses;
 using DNI.Core.Contracts.Providers;
+using DNI.Core.Domains;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -28,10 +29,14 @@ namespace BlazorAppConcept.Services.RequestHandlers
         public async Task<GetCustomerResponse> Handle(GetCustomerRequest request, CancellationToken cancellationToken)
         {
             var customer = await _customerService.GetCustomer(request.Id, cancellationToken);
+
+            if(customer == null)
+                return Response.Failed<GetCustomerResponse>();
+
             var decryptedCustomer = await _encryptionProvider
                 .Decrypt<Customer, CustomerDto>(customer);
 
-            return new GetCustomerResponse { Customer = decryptedCustomer };
+            return Response.Success<GetCustomerResponse>(decryptedCustomer);
         }
     }
 }

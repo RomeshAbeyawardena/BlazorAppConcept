@@ -21,7 +21,7 @@ namespace BlazorAppConcept.Data
             services.RegisterDbContextRepositories<CrmDbContext>(config => {
                 config.DbContextServiceProviderOptions = BuildDbContextServiceProviderOptions;
                 config.ServiceLifetime = ServiceLifetime.Transient;
-                config.DescribedTypes = TypesDescriptor.Describe<Customer>();
+                config.DescribedEntityTypes = TypesDescriptor.Describe<Customer>();
             });
         }
 

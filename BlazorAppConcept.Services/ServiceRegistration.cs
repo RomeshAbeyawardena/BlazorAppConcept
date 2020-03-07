@@ -20,6 +20,7 @@ namespace BlazorAppConcept.Services
         public void RegisterServices(IServiceCollection services, IServiceRegistrationOptions options)
         {
             services
+                .AddSingleton<ApplicationSettings>()
                 .RegisterCryptographicCredentialsFactory<AppCryptographicCredentials>(RegisterCryptographicCredentialsFactory)
                 .Scan(scan => scan
             .FromAssemblyOf<ServiceRegistration>()

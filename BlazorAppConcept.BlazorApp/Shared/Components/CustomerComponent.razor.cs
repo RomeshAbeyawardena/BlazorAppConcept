@@ -1,6 +1,7 @@
 ﻿using BlazorAppConcept.Domains.States;
 using BlazorState;
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Web;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,12 +23,16 @@ namespace BlazorAppConcept.BlazorApp.Shared.Components
         protected string EmailAddress => CustomerState.EmailAddress;
         protected DateTime DateOfBirth => CustomerState.DateOfBirth;
 
-        protected override Task OnParametersSetAsync()
+        protected async Task UpdateCustomerField(string propertyName, object value)
         {
-            Mediator.Send(new CustomerState.RetrieveCustomerAction { 
+            await Mediator.Send(new CustomerState.UpdateCustomerFieldAction { PropertyName = propertyName, Value = value });
+        }
+
+        protected override async Task OnParametersSetAsync()
+        {
+            await Mediator.Send(new CustomerState.RetrieveCustomerAction { 
                 CustomerId = CustomerId
             });
-            return base.OnParametersSetAsync();
         }
 
     }
